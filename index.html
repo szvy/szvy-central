@@ -69,6 +69,20 @@
       bottom: 10px;
       width: 100%;
     }
+
+    .motd {
+      font-family: 'PT Mono', monospace;
+      background-color: #222;
+      color: #f0f0f0;
+      padding: 20px;
+      font-size: 20px;
+      border-bottom: 2px solid #4CAF50;
+      text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+      display: flex; /* Use flexbox for layout */
+      align-items: center; /* Align items vertically in the center */
+      justify-content: center; /* Center items horizontally */
+    }
+    
   </style>
 </head>
 <body>
@@ -81,6 +95,9 @@
   </header>
 
   <!-- Button is now a clickable link -->
+  <div class="motd">
+    motd: New Year, New Site
+  </div>
   <div class="button-container">
     <a href="games.html" class="button">
       Games
@@ -101,7 +118,25 @@
       Partners
     </a>
   </div>
-
+  <div class="button-container">
+    <a href="javascript:void(0)" onclick="openGame()" class="button">
+    Open ab cloaked
+      (hides from search history)
+    </a>
+  </div>
+  
+  <script>
+    function openGame() {
+      var win = window.open();
+      var url = window.location.href; // Get the current URL
+      var iframe = win.document.createElement('iframe');
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+    }
+  </script>
   <div class="stat-counter">
     <script type="text/javascript" src="https://www.stat-counter.org/count/cgir"></script><br>
     <script type='text/javascript' src='https://whomania.com/ctr?id='35380d9a2c4e3735878dc1918e80b8139c4b637c></script>

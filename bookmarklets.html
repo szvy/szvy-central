@@ -134,16 +134,17 @@
 </div>
 </body>
 <script>
-function copyToClipboard(textToCopy) {
-    const textarea = document.createElement('textarea');
-    const match = textToCopy.match(/onclick="([^"]+)"/);
-    if (match) {
-        textarea.value = match[1];
+function copyToClipboard(button) {
+    const codeToCopy = button.getAttribute('onclick');
+    
+    if (codeToCopy) {
+        const textarea = document.createElement('textarea');
+        textarea.value = codeToCopy;
         document.body.appendChild(textarea);
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        alert('onclick attribute copied to clipboard!');
+        alert('Code next to onclick attribute copied to clipboard!');
     } else {
         alert('No onclick attribute found!');
     }

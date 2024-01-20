@@ -136,12 +136,19 @@
 <script>
 function copyToClipboard(textToCopy) {
     const textarea = document.createElement('textarea');
-    textarea.value = textToCopy;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-    alert('Code copied to clipboard!');
+    const match = textToCopy.match(/onclick="([^"]+)"/);
+    if (match) {
+        textarea.value = match[1];
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('onclick attribute copied to clipboard!');
+    } else {
+        alert('No onclick attribute found!');
+    }
+}
 </script>
+
 
 </html>

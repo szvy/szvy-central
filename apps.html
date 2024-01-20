@@ -107,9 +107,12 @@
     </header>
   </div>
 
-  <iframe id="game-iframe" src="szvycentral-ontop-szvyisgoated-int1.vercel.app" frameborder="0"></iframe>
+<button onclick="openLink()">Click here for the apps to work</button>
 
   <script>
+     function openLink() {
+        window.open("https://szvycentral-ontop-szvyisgoated-int1.vercel.app", "_blank");
+    }
     function searchGames() {
       var input, filter, rows, placeholders, i, txtValue;
       input = document.getElementById("searchBar");

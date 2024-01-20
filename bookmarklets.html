@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proxies - Szvy Central</title>
+  <title>Bookmarklets - Szvy Central</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=PT+Mono&display=swap" rel="stylesheet">
   <style>
     body {
@@ -127,7 +127,7 @@
       </div>
       Bookmarklets
     </header>
-    <p id="info">Add a this site to your favorites/bookmarks then change the link with some of the code below</p>
+    <p id="info">Add a this site to your favorites/bookmarks then change the link with some of the code below, MAKE SURE YOU REMOVE THE `<script>` PART</p>
 <p id="info">AutoClicker</p>
 <div class="button-container">
     <button class="copy-button" onclick="copyToClipboard('javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement(\'style\');autoClickerStyleElement.innerHTML=\'*{cursor: crosshair !important;}\';document.body.appendChild(autoClickerStyleElement);function addClicker(e){if(!e.isTrusted){return;}if(e.target.classList.contains(\'auto-clicker-target\')){e.target.classList.remove(\'auto-clicker-target\');}else{e.target.classList.add(\'auto-clicker-target\');}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener(\'click\', addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element){if(element.classList.contains(\'auto-clicker-target\')){element.click();setTimeout(function(){autoClick(element);}, DELAY);}}document.body.addEventListener(\'click\', addClicker, 0);')">Copy</button>

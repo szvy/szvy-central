@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxies - Szvy Central</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=PT+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #fff;
+    }
+
+    header {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #222;
+      color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      border-bottom: 2px solid #4CAF50;
+      text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .row {
+      margin-bottom: 20px;
+    }
+
+    .placeholder-image {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .placeholder-container {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .hyperlink-container {
+      font-family: 'PT Mono', monospace;
+      font-size: 18px;
+      color: #4CAF50;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+      transition: color 0.3s;
+    }
+
+    .hyperlink-container:hover {
+      color: #45a049;
+    }
+
+    #searchBar {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #4CAF50;
+      border-radius: 4px;
+      margin-left: 10px;
+    }
+
+    #searchButton {
+      padding: 8px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #searchButton:hover {
+      background-color: #45a049;
+    }
+    
+    info {
+      font-family: 'PT Mono', cursive;
+      background-color: #222;
+      color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 2px solid #4CAF50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+     .copy-button {
+      background-color: #4CAF50;
+      color: #111;
+    }
+
+    .copy-button:hover {
+      background-color: #45a049;
+    }
+
+        .button-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="content-container">
+    <header>
+      <div id="logo-container" style="margin-right: 20px;">
+        <a href="index.html">
+          <img id="logo" src="logo.jpeg" alt="Logo" style="border-radius: 50%; width: 50px; height: 50px; margin-right: 20px;">
+        </a>
+      </div>
+      Bookmarklets
+    </header>
+    <input type="text" id="info" name="info" text="Add a this site to your favorites/bookmarks then change the link with some of the code below">
+    <p id="info">3D Website</p>
+      <div class="button-container">
+    <button class="copy-button" onclick="copyToClipboard("javascript:krazete:!function(){var d={menu:document.createElement("div"),limit:document.createElement("input"),gap:document.createElement("input"),sag:document.createElement("input"),fov:document.createElement("input"),flo:document.createElement("input"),off:document.createElement("input"),non:document.createElement("input"),end:document.createElement("input"),tgl:document.createElement("input"),cssStatic:document.createElement("style"),cssDynamic:document.createElement("style"),orientation:{yaw:0,pitch:0,roll:0},mouseMove:function(e){d.orientation.yaw=180*-Math.cos(Math.PI*e.clientX/innerWidth)*d.limit.value,d.orientation.pitch=180*Math.cos(Math.PI*e.clientY/innerHeight)*d.limit.value,d.updateBody()},gyroMove:function(e){innerWidth>innerHeight?(d.orientation.yaw=-(e.alpha+e.beta),d.orientation.pitch=e.gamma-90*Math.sign(90-Math.abs(e.beta))):(d.orientation.yaw=-(e.alpha+e.gamma),d.orientation.pitch=e.beta-90),d.updateBody()},updateOrigin:function(e){document.body.style.transformOrigin=innerWidth/2+pageXOffset+"px "+(innerHeight/2+pageYOffset)+"px"},updateBody:function(){document.body.style.transform="perspective("+Math.pow(2,d.fov.value)+"px) translateZ(-"+d.gap.value+"px) rotateX("+d.orientation.pitch+"deg) rotateY("+d.orientation.yaw+"deg)"},updateCSS:function(){if(d.non.checked)d.cssDynamic.innerHTML="";else if(d.off.checked)d.cssDynamic.innerHTML="* { transform-style: preserve-3d; }";else{for(var e=0;document.querySelector("body"+" > *".repeat(e));e++);var t=d.gap.value/e,n=-Math.PI*d.sag.value/e;d.cssDynamic.innerHTML=` * { transform: translateZ(${t}px) rotateX(${n}rad); transform-style: preserve-3d; transition: transform 1s; outline: 1px solid rgba(0, 0, 0, 0.0625); ${d.flo.checked?"overflow: visible !important;":""} } *:hover { transform: translateZ(${2*t}px) rotateX(${2*n}rad); ${d.flo.checked?"":"overflow: visible;"} } `}},toggle:function(){"active"==d.menu.className?d.menu.removeAttribute("class"):d.menu.className="active"},quit:function(){window.removeEventListener("deviceorientation",d.gyroMove),window.removeEventListener("mousemove",d.mouseMove),window.removeEventListener("scroll",d.updateOrigin),window.addEventListener("resize",d.updateOrigin),d.menu.remove(),d.cssStatic.remove(),d.cssDynamic.remove(),document.body.removeAttribute("style")},newRange:function(e,t,n,o,i,a,r){d.menu.appendChild(e),e.type="range",e.min=n,e.max=i,e.step=o,e.value=a,e.addEventListener("input",r),d.menu.appendChild(document.createElement("span")).innerHTML=t,d.menu.appendChild(document.createElement("br"))},newCheckbox:function(e,t,n){d.menu.appendChild(e),e.type="checkbox",e.addEventListener("click",n),d.menu.appendChild(document.createElement("span")).innerHTML=t,d.menu.appendChild(document.createElement("br"))},newButton:function(e,t,n){d.menu.appendChild(e),e.type="button",e.value=t,e.addEventListener("click",n)},init:function(){document.body.parentNode.appendChild(d.menu).id="tri-menu",d.newRange(d.limit,"limit",0,.03125,1,.125,d.updateBody),d.newRange(d.gap,"gap / distance",0,32,512,128,function(){d.updateCSS(),d.updateBody()}),d.newRange(d.sag,"sag",-.25,.03125,.25,0,d.updateCSS),d.newRange(d.fov,"field of view",7,1,13,10,d.updateBody),d.newCheckbox(d.flo,"force overflow",d.updateCSS),d.flo.setAttribute("checked",""),d.newCheckbox(d.off,"flatten layers",d.updateCSS),d.newCheckbox(d.non,"flatten everything",d.updateCSS),d.newButton(d.end,"Quit",d.quit),d.newButton(d.tgl,"≡",d.toggle),d.tgl.id="tri-toggle",d.menu.appendChild(d.cssStatic).innerHTML=` html, body { transition-property: none; height: 100%25; width: 100%25; } html, html:hover, #tri-menu, #tri-menu > *, #tri-menu > *:hover { transform: none; outline: none; overflow: auto !important; float: none; } #tri-menu { position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.5); color: white; border: 1px solid rgba(255, 255, 255, 0.5);; border-radius: 0 0 16px 0; padding: 8px; transform: translate(-100%25, -100%25) translate(32px, 32px); } #tri-menu.active { transform: none; } #tri-toggle { position: absolute; bottom: 0; right: 0; height: 32px; width: 32px; background: transparent; color: white; border: none; cursor: pointer; } #tri-menu.active > #tri-toggle { background: white; color: black; border-radius: 8px 0 0 0; } %60,d.menu.appendChild(d.cssDynamic),d.updateCSS(),window.addEventListener("deviceorientation",d.gyroMove),window.addEventListener("mousemove",d.mouseMove),window.addEventListener("scroll",d.updateOrigin),window.addEventListener("resize",d.updateOrigin),window.scrollBy(0,1)}};d.init()}();");">Copy</button>
+ <p id="info">AutoClicker</p>
+      <div class="button-container">
+    <button class="copy-button" onclick="copyToClipboard("javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement("style");autoClickerStyleElement.innerHTML="*{cursor: crosshair !important;}";document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains("auto-clicker-target")) {e.target.classList.remove("auto-clicker-target");} else {e.target.classList.add("auto-clicker-target");}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener("click", addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains("auto-clicker-target")) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener("click", addClicker, 0);">Copy</button>
+</body>
+<script>
+function copyToClipboard(textToCopy) {
+    var textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("Text copied to clipboard: " + textToCopy);
+}
+
+
+</script>
+
+</html>

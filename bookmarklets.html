@@ -34,69 +34,29 @@
       margin: 20px auto;
     }
 
-    .row {
-      margin-bottom: 20px;
-    }
-
-    .placeholder-image {
-      width: 150px;
-      height: 150px;
-      margin-bottom: 10px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .placeholder-container {
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    .hyperlink-container {
+    .info, .hyperlink-container, .copy-button, .urmomsid {
       font-family: 'PT Mono', monospace;
       font-size: 18px;
       color: #4CAF50;
       text-decoration: none;
-      display: block;
       margin-top: 10px;
       transition: color 0.3s;
     }
 
-    .hyperlink-container:hover {
+    .hyperlink-container:hover, .copy-button:hover, .urmomsid:hover {
       color: #45a049;
     }
 
-    #searchBar {
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #4CAF50;
-      border-radius: 4px;
-      margin-left: 10px;
+    .button-container {
+      text-align: center;
+      margin: 20px auto;
     }
 
-    #searchButton {
-      padding: 8px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+    .urmomsid {
+      font-size: 9px;
     }
 
-    #searchButton:hover {
-      background-color: #45a049;
-    }
-    
-    .info {
-      font-family: 'PT Mono', monospace;
-      font-size: 18px;
-      color: #4CAF50;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: color 0.3s;
-    }
-
-     .copy-button {
+    .copy-button {
       background-color: #4CAF50;
       color: #111;
     }
@@ -104,41 +64,48 @@
     .copy-button:hover {
       background-color: #45a049;
     }
-
-        .button-container {
-      text-align: center;
-      margin: 20px auto;
-    }
-
-    .urmomsid
-      font-family: 'PT Mono', monospace;
-      font-size: 9px;
-      color: #4CAF50;
-      text-decoration: none;
-      margin-top: 10px;
-      transition: color 0.3s;
-    }
   </style>
 </head>
 
 <body>
   <div class="content-container">
     <header>
-      <div id="logo-container" style="margin-right: 20px;">
+      <div class="logo-container" style="margin-right: 20px;">
         <a href="index.html">
-          <img id="logo" src="logo.jpeg" alt="Logo" style="border-radius: 50%; width: 50px; height: 50px; margin-right: 20px;">
+          <img class="logo" src="logo.jpeg" alt="Logo" style="border-radius: 50%; width: 50px; height: 50px; margin-right: 20px;">
         </a>
       </div>
       Bookmarklets
     </header>
 
-    <div id="info" style="margin-bottom: 20px;">Add this site to your favorites/bookmarks, then change the link with the bookmark code you want</div>
+    <div class="info" style="margin-bottom: 20px;">Add this site to your favorites/bookmarks, then change the link with the bookmark code you want</div>
 
-    <div id="info" style="margin-bottom: 20px;">AutoClicker</div>
+    <div class="info" style="margin-bottom: 20px;">AutoClicker</div>
 
-    <div id="urmomsid" style="margin-bottom: 20px;">javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement('style');autoClickerStyleElement.innerHTML='*{cursor: crosshair !important;}';document.body.appendChild(autoClickerStyleElement);function addClicker(e){if(!e.isTrusted){return;}if(e.target.classList.contains('auto-clicker-target')){e.target.classList.remove('auto-clicker-target');}else{e.target.classList.add('auto-clicker-target');}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener('click', addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element){if(element.classList.contains('auto-clicker-target')){element.click();setTimeout(function(){autoClick(element);}, DELAY);}}document.body.addEventListener('click', addClicker, 0);')</div>
+    <div class="urmomsid" style="margin-bottom: 20px;">
+      javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement('style');
+      autoClickerStyleElement.innerHTML='*{cursor: crosshair !important;}';
+      document.body.appendChild(autoClickerStyleElement);
+      function addClicker(e){if(!e.isTrusted){return;}
+        if(e.target.classList.contains('auto-clicker-target')){
+          e.target.classList.remove('auto-clicker-target');
+        }else{
+          e.target.classList.add('auto-clicker-target');
+        }
+        document.body.removeChild(autoClickerStyleElement);
+        document.body.removeEventListener('click', addClicker);
+        e.preventDefault();
+        autoClick(e.target);
+      }
+      function autoClick(element){
+        if(element.classList.contains('auto-clicker-target')){
+          element.click();
+          setTimeout(function(){autoClick(element);}, DELAY);
+        }
+      }
+      document.body.addEventListener('click', addClicker, 0);
+    </div>
   </div>
 </body>
-
 
 </html>

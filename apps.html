@@ -108,26 +108,7 @@
   </div>
 
 <iframe src="https://subtoszvy-in-the-stellar.vercel.app/~" style="border:0px #ffffff none;" name="apps" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="720px" width="1920px" allowfullscreen></iframe>
-    function searchGames() {
-      var input, filter, rows, placeholders, i, txtValue;
-      input = document.getElementById("searchBar");
-      filter = input.value.toUpperCase();
-      rows = document.getElementsByClassName("row");
-
-      for (i = 0; i < rows.length; i++) {
-        placeholders = rows[i].getElementsByClassName("hyperlink-container");
-        for (var j = 0; j < placeholders.length; j++) {
-          txtValue = placeholders[j].textContent || placeholders[j].innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            rows[i].style.display = "";
-            break;
-          } else {
-            rows[i].style.display = "none";
-          }
-        }
-      }
-    }
-  </script>
+   
 </body>
 
 </html>

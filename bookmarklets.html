@@ -88,7 +88,7 @@
     }
     
     info {
-      font-family: 'PT Mono', cursive;
+      font-family: 'PT Mono',
       background-color: #222;
       color: #4CAF50;
       padding: 20px;
@@ -113,7 +113,14 @@
       text-align: center;
       margin: 20px auto;
     }
-    
+
+    .urmomsid
+      text-align: center;
+      font-family: 'PT Mono',
+      font-size: 7px;
+      color: #4CAF50;
+      display: flex;
+    }
   </style>
 </head>
 
@@ -127,29 +134,11 @@
       </div>
       Bookmarklets
     </header>
-    <p id="info">Add a this site to your favorites/bookmarks then change the link with some of the code below, MAKE SURE YOU REMOVE THE `script` PART</p>
+    <p id="info">Add a this site to your favorites/bookmarks then change the link with the bookmark code you want</p>
 <p id="info">AutoClicker</p>
-<div class="button-container">
-    <button class="copy-button" onclick="copyToClipboard('javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement(\'style\');autoClickerStyleElement.innerHTML=\'*{cursor: crosshair !important;}\';document.body.appendChild(autoClickerStyleElement);function addClicker(e){if(!e.isTrusted){return;}if(e.target.classList.contains(\'auto-clicker-target\')){e.target.classList.remove(\'auto-clicker-target\');}else{e.target.classList.add(\'auto-clicker-target\');}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener(\'click\', addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element){if(element.classList.contains(\'auto-clicker-target\')){element.click();setTimeout(function(){autoClick(element);}, DELAY);}}document.body.addEventListener(\'click\', addClicker, 0);')">Copy</button>
+<p id="urmomsid">javascript:var DELAY = 1;var autoClickerStyleElement = document.createElement(\'style\');autoClickerStyleElement.innerHTML=\'*{cursor: crosshair !important;}\';document.body.appendChild(autoClickerStyleElement);function addClicker(e){if(!e.isTrusted){return;}if(e.target.classList.contains(\'auto-clicker-target\')){e.target.classList.remove(\'auto-clicker-target\');}else{e.target.classList.add(\'auto-clicker-target\');}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener(\'click\', addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element){if(element.classList.contains(\'auto-clicker-target\')){element.click();setTimeout(function(){autoClick(element);}, DELAY);}}document.body.addEventListener(\'click\', addClicker, 0);')</p>
 </div>
 </body>
-<script>
-function copyToClipboard(button) {
-    const codeToCopy = button.getAttribute('onclick');
-    
-    if (codeToCopy) {
-        const textarea = document.createElement('textarea');
-        textarea.value = codeToCopy;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        alert('Code next to onclick attribute copied to clipboard!');
-    } else {
-        alert('No onclick attribute found!');
-    }
-}
-</script>
 
 
 </html>
